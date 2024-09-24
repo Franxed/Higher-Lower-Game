@@ -14,9 +14,10 @@ def main():
 
 
     count = 0
+    celeb_a = random.choice(celebs)     # Outside loop to update the value.
     while True:
         try:
-            celeb_a = random.choice(celebs)
+            # Select a new celeb_b.
             celeb_b = random.choice(celebs)
 
             # Ensure no two celebrities have been selected.
@@ -40,7 +41,8 @@ def main():
 
                 else:
                     print(f"Sorry, {celeb_b['name']} has {celeb_b['follower_count']}M followers.\n"
-                          f"The correct answer was lower!")
+                          f"The correct answer was lower!"
+                          f"\nYou scored {count} points!")
                     break
 
             elif user == "lower":
@@ -54,7 +56,8 @@ def main():
 
                 else:
                     print(f"Sorry, {celeb_b['name']} has {celeb_b['follower_count']}M followers.\n"
-                          f"The correct answer was higher!")
+                          f"The correct answer was higher!"
+                          f"\nYou scored {count} points!")
                     break
 
         except Exception as e:
